@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World アプリ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 50px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .message {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .success {
+            color: #28a745;
+        }
+        .error {
+            color: #dc3545;
+        }
+        .status {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Django Hello World アプリ</h1>
+        
+        <!-- メッセージ表示部分 -->
+        <div class="message {% if status == 'success' %}success{% else %}error{% endif %}">
+            {{ message }}
+        </div>
+        
+        <!-- ステータス表示部分 -->
+        <div class="status">
+            {% if status == 'success' %}
+                データベースからメッセージを正常に取得しました
+            {% else %}
+                データベースからメッセージを取得できませんでした
+            {% endif %}
+        </div>
+        
+        <hr style="margin: 30px 0;">
+        <p style="color: #666; font-size: 0.9em;">
+            このアプリはDjangoを使用してデータベースからメッセージを取得し表示します。<br>
+            データベースにメッセージが保存されていない場合は「Error」が表示されます。
+        </p>
+    </div>
+</body>
+</html>
