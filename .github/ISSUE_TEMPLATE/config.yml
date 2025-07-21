@@ -1,4 +1,4 @@
-blank_issues_enabled: false
+blank_issues_enabled: true
 contact_links:
   - name: プロジェクトについて
     url: https://github.com/TakuyaFukumura/basic-django-app
